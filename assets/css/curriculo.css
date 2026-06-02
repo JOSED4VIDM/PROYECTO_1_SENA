@@ -1,0 +1,506 @@
+/* =========================
+   VARIABLES GLOBALES
+========================= */
+
+:root {
+
+    --background-color: #000000;
+
+    --surface-color: rgba(0, 0, 0, 0.86);
+
+    --surface-strong: #111111;
+
+    --border-color: #2a2a2a;
+
+    --text-color: #ffffff;
+
+    --muted-color: #c9c9c9;
+
+    --accent-color: #00ff1a;
+
+    --accent-soft: #1b1b1b;
+
+    --shadow-color: rgba(255, 255, 255, 0.08);
+
+    --transition-speed: 0.25s;
+}
+
+/* =========================
+   RESET / BASE
+========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    margin: 0;
+
+    padding: 24px;
+
+    min-height: 100vh;
+
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+
+    line-height: 1.6;
+
+    color: var(--text-color);
+
+    background-color: var(--background-color);
+
+    text-rendering: optimizeLegibility;
+
+    -webkit-font-smoothing: antialiased;
+
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.container-cv {
+
+    max-width: 960px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: var(--surface-color);
+
+    box-shadow:
+        0 18px 50px var(--shadow-color);
+
+    backdrop-filter: blur(6px);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.cv-header {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 24px;
+
+    padding: 36px 24px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111111 0%,
+            #1d1c1c 100%
+        );
+}
+
+/* =========================
+   FOTO PERFIL
+========================= */
+
+.profile-photo {
+
+    width: 180px;
+
+    height: 180px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    border: 6px solid #2a2a2a;
+
+    background: #1f1f1f;
+
+    flex-shrink: 0;
+}
+
+.profile-photo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+/* =========================
+   TEXTO HEADER
+========================= */
+
+.header-text h1 {
+
+    margin-bottom: 12px;
+
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+
+    line-height: 1.1;
+
+    color: #ffffff;
+}
+
+.subtitle {
+
+    margin-bottom: 12px;
+
+    font-size: 1rem;
+
+    color: #d7d7d7;
+}
+
+/* =========================
+   CONTACTOS
+========================= */
+
+.contact-list {
+
+    display: grid;
+
+    gap: 8px;
+}
+
+.contact-list p {
+    color: #ffffff;
+}
+
+.contact-list a {
+
+    color: var(--accent-color);
+
+    text-decoration: none;
+
+    transition:
+        color var(--transition-speed) ease,
+        opacity var(--transition-speed) ease;
+}
+
+.contact-list a:hover,
+.contact-list a:focus-visible {
+
+    opacity: 0.8;
+
+    text-decoration: underline;
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+.section {
+
+    padding: 0 24px 30px;
+
+    border-bottom:
+        1px solid var(--border-color);
+}
+
+.section:last-of-type {
+    border-bottom: none;
+}
+
+.section-heading {
+    margin-bottom: 14px;
+}
+
+.section-heading h2 {
+
+    font-size: 1.2rem;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    color: var(--accent-color);
+}
+
+/* =========================
+   TEXTOS
+========================= */
+
+.section p,
+.job-card p,
+.info-card p,
+.cert-card p,
+.cv-footer p {
+
+    color: var(--muted-color);
+}
+
+/* =========================
+   EXPERIENCIA
+========================= */
+
+.job-card {
+
+    padding: 22px;
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius: 18px;
+
+    background: var(--surface-strong);
+}
+
+.job-card h3 {
+
+    margin-bottom: 8px;
+
+    font-size: 1.1rem;
+
+    color: #ffffff;
+}
+
+.job-meta {
+
+    margin-bottom: 14px;
+
+    font-size: 0.95rem;
+}
+
+.job-card ul {
+
+    padding-left: 18px;
+
+    color: #ffffff;
+}
+
+.job-card li {
+    margin-bottom: 8px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.two-column {
+
+    display: grid;
+
+    gap: 24px;
+}
+
+/* =========================
+   BLOQUES
+========================= */
+
+.info-block {
+
+    padding: 20px;
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius: 18px;
+
+    background: var(--surface-strong);
+}
+
+/* =========================
+   TARJETAS
+========================= */
+
+.info-card,
+.cert-card {
+
+    margin-top: 12px;
+
+    padding: 18px;
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius: 14px;
+
+    background: #181818;
+}
+
+.info-card h3,
+.cert-card h3 {
+
+    margin-bottom: 6px;
+
+    font-size: 1rem;
+
+    color: #ffffff;
+}
+
+.cert-grid {
+
+    display: grid;
+
+    gap: 12px;
+}
+
+.cert-card a {
+
+    display: inline-block;
+
+    margin-top: 8px;
+
+    color: var(--accent-color);
+
+    text-decoration: none;
+}
+
+.cert-card a:hover,
+.cert-card a:focus-visible {
+
+    text-decoration: underline;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skill-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 8px;
+}
+
+.skill-list span {
+
+    padding: 10px 16px;
+
+    border-radius: 999px;
+
+    background: var(--accent-soft);
+
+    color: var(--accent-color);
+
+    font-size: 0.95rem;
+
+    border:
+        1px solid #2a2a2a;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.cv-footer {
+
+    padding: 24px;
+
+    text-align: center;
+
+    background: #101010;
+}
+
+.cv-footer p {
+
+    margin: 6px 0;
+
+    font-size: 0.95rem;
+}
+
+/* =========================
+   FOCUS ACCESIBILIDAD
+========================= */
+
+a:focus-visible {
+
+    outline: 2px solid var(--accent-color);
+
+    outline-offset: 3px;
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (min-width: 768px) {
+
+    .cv-header {
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        padding: 42px 40px;
+
+        text-align: left;
+    }
+
+    .two-column {
+
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 0;
+    }
+
+    .container-cv {
+        border-radius: 0;
+    }
+
+    .cv-header {
+        padding: 30px 18px;
+    }
+
+    .section {
+        padding: 0 18px 24px;
+    }
+
+    .cv-footer {
+        padding: 20px 18px;
+    }
+
+    .profile-photo {
+
+        width: 150px;
+
+        height: 150px;
+    }
+}
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        scroll-behavior: auto;
+        transition: none;
+    }
+}
